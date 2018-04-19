@@ -71,8 +71,8 @@ app.get('/', function (req, res) {
       <link rel="stylesheet" href="style.css">
       <h1>Welcome to Kenziegram!</h1>
       <form action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
-          <input type="file" id="file" name="myFile">
-          <input type="submit" id="submit" value="Upload">
+         
+          <input type="submit" id="submit" value="Upload Page">
       </form>
       <div id="images">${itemsImages}</div>`
       );
@@ -89,7 +89,7 @@ app.post('/upload', (req, res) => {
       } else {
         if(req.file == undefined){
           res.render('index', {
-            msg: 'Error: No File Selected!'
+            msg: ""
           });
         } else {
             console.log(req.file);
