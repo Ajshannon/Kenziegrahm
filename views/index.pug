@@ -1,0 +1,27 @@
+doctype
+html
+    include includes/header.pug
+
+    body
+        div(class='container')
+            h1 File Upload
+            
+            p= typeof msg != 'undefined' ? msg : ''
+
+            
+            form(action="/upload", method="POST", enctype="multipart/form-data")
+                div(class="/fire-field input-field")
+                    div(class="btn grey")
+                        span Choose file
+                        input(name="myImage" type="file")
+                    div(class="file-path-wrapper")
+                        input(class="file-path validate" type="text") 
+                input(class="btn", type="button", value="Go back!", onclick="history.back()")
+                button(class="btn", type="submit", value="Submit") Submit
+                input(class="btn", type="button", value="home", onclick="window.location.href='http://localhost:3000'")
+            br
+            div(id="images")
+            
+        script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js")
+        script(src="index.js")
